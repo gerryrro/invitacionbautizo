@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bautizo · Gerardo Leonardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#f4f0e6;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem 3rem;
+  font-family:'Cormorant Garamond',serif;
+}
+.card{
+  width:100%;
+  max-width:420px;
+  background:#fdf8ef;
+  border:1.5px solid #c9a84c;
+  border-radius:4px;
+  overflow:hidden;
+  animation:fadeUp .9s ease both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%,100%{opacity:.75}50%{opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes pawBounce{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-4px) rotate(-8deg)}}
+
+.card-header{
+  background:#1a3a5c;
+  padding:2.25rem 1.5rem 1.75rem;
+  text-align:center;
+  position:relative;
+}
+.corner-ornament{position:absolute;width:28px;height:28px;opacity:.5}
+.corner-tl{top:8px;left:8px}
+.corner-tr{top:8px;right:8px;transform:scaleX(-1)}
+.cross-svg{display:block;margin:0 auto .85rem}
+.header-title{font-family:'Cinzel',serif;color:#e8c96a;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin:0 0 .25rem}
+.header-name{font-family:'Cormorant Garamond',serif;color:#fdf8ef;font-size:34px;font-weight:300;font-style:italic;margin:.25rem 0 0;line-height:1.2}
+
+.card-body{padding:1.5rem 2rem;text-align:center}
+.ornament{display:flex;align-items:center;gap:8px;margin:.75rem 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:.5px;background:#c9a84c;opacity:.6}
+.diamond{width:5px;height:5px;background:#c9a84c;transform:rotate(45deg);flex-shrink:0}
+
+.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:#1a3a5c;font-size:15px;font-weight:400;margin:0 0 .5rem;line-height:1.5}
+.intro-text{font-family:'Cormorant Garamond',serif;color:#3a3a3a;font-size:14px;font-weight:300;line-height:1.75;margin:.75rem 0}
+.baby-name-block{margin:1rem 0;padding:.75rem 1rem;border:.5px solid #c9a84c;border-radius:2px;background:#fff9ec}
+.baby-name-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:#c9a84c;display:block;margin-bottom:4px}
+.baby-name-text{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1a3a5c;letter-spacing:.5px;line-height:1.2;animation:shimmer 3s ease-in-out infinite}
+.faith-text{font-family:'Cormorant Garamond',serif;font-style:italic;color:#5a4a2a;font-size:13px;margin:.5rem 0 1rem}
+
+.section-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:#c9a84c;display:block;margin-bottom:4px;text-transform:uppercase}
+.event-block{margin:1rem 0;padding:.75rem;background:#f5f0e4;border-left:2px solid #1a3a5c;text-align:left;border-radius:0 2px 2px 0}
+.event-name{font-family:'Cinzel',serif;font-size:10.5px;color:#1a3a5c;letter-spacing:1.5px;font-weight:600;margin-bottom:4px}
+.event-detail{font-family:'Cormorant Garamond',serif;font-size:13px;color:#3a3a3a;line-height:1.55;font-weight:400}
+.event-detail strong{color:#1a3a5c;font-weight:600}
+.map-link{display:inline-flex;align-items:center;gap:4px;margin-top:6px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:#1a3a5c;text-decoration:none;border-bottom:.5px solid #c9a84c;padding-bottom:1px}
+
+.parents-block{margin:1.25rem 0 .75rem}
+.parents-names{font-family:'Cormorant Garamond',serif;font-size:15px;color:#1a3a5c;line-height:1.6}
+.padrinos-name{font-family:'Cormorant Garamond',serif;font-size:14px;color:#5a4a2a;font-style:italic}
+.closing-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:#3a3a3a;margin:1rem 0 .5rem;line-height:1.6}
+
+/* Music bar */
+.music-bar{
+  background:#0f2340;
+  padding:.7rem 1.25rem;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.music-btn{
+  width:32px;height:32px;
+  border-radius:50%;
+  border:1px solid #c9a84c;
+  background:transparent;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  transition:background .2s;
+}
+.music-btn:hover{background:rgba(201,168,76,.15)}
+.music-label{
+  font-family:'Cinzel',serif;
+  font-size:9px;letter-spacing:1.5px;
+  color:#a8c0d8;
+  flex:1;
+}
+.music-note{font-size:15px;color:#e8c96a;animation:float 1.5s ease-in-out infinite}
+
+/* Lion section */
+.lion-section{
+  background:#1a3a5c;
+  padding:1.75rem 1.5rem 1.5rem;
+  text-align:center;
+  position:relative;
+}
+.lion-section::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#c9a84c 40%,#c9a84c 60%,transparent);
+}
+.lion-stars{display:flex;justify-content:center;gap:14px;margin-bottom:1.1rem}
+.lion-star{width:7px;height:7px;background:#e8c96a;transform:rotate(45deg)}
+.lion-star:nth-child(1){animation:float 2.4s ease-in-out infinite}
+.lion-star:nth-child(2){animation:float 2.4s ease-in-out .4s infinite}
+.lion-star:nth-child(3){animation:float 2.4s ease-in-out .8s infinite}
+.lion-star:nth-child(4){animation:float 2.4s ease-in-out .4s infinite}
+.lion-star:nth-child(5){animation:float 2.4s ease-in-out infinite}
+
+.lion-cub-wrap{display:flex;justify-content:center;align-items:flex-end;gap:16px;margin-bottom:1.1rem}
+.cub-a{animation:float 3.2s ease-in-out infinite}
+.cub-b{animation:float 3.2s ease-in-out 1.1s infinite}
+
+.lion-speech{
+  background:#fdf8ef;
+  border-radius:4px;
+  padding:1rem 1.25rem 1.1rem;
+  margin:0;
+  position:relative;
+}
+.lion-speech::before{
+  content:'';
+  position:absolute;
+  top:-9px;left:50%;transform:translateX(-50%);
+  border:8px solid transparent;
+  border-bottom-color:#fdf8ef;
+  border-top:none;
+}
+.lion-speech-label{
+  font-family:'Cinzel',serif;
+  font-size:9px;letter-spacing:2px;
+  color:#c9a84c;
+  display:block;margin-bottom:7px;text-align:center;
+}
+.lion-speech-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13.5px;color:#2a2a1a;
+  line-height:1.78;font-weight:300;font-style:italic;
+  text-align:center;
+}
+.size-badge{
+  display:inline-block;
+  background:#c9a84c;
+  color:#1a3a5c;
+  font-family:'Cinzel',serif;
+  font-size:10px;letter-spacing:2px;font-weight:600;
+  padding:5px 14px;border-radius:2px;margin-top:.85rem;
+}
+.paw-row{display:flex;justify-content:center;gap:12px;margin-top:1.1rem}
+.paw{animation:pawBounce 1.9s ease-in-out infinite;opacity:.5}
+.paw:nth-child(2){animation-delay:.35s}
+.paw:nth-child(3){animation-delay:.7s}
+
+.card-footer{background:#1a3a5c;padding:.75rem 1.5rem;text-align:center}
+.footer-text{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:#e8c96a}
+
+#yt-player{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0}
+</style>
+</head>
+<body>
+
+<div id="yt-player"></div>
+
+<div class="card">
+
+  <!-- Music bar -->
+  <div class="music-bar">
+    <button class="music-btn" id="play-btn" onclick="toggleMusic()" title="Reproducir / Pausar">
+      <svg id="ico-play" width="12" height="13" viewBox="0 0 12 13" fill="#e8c96a"><polygon points="2,1 11,6.5 2,12"/></svg>
+      <svg id="ico-pause" width="11" height="13" viewBox="0 0 11 13" fill="#e8c96a" style="display:none"><rect x="1" y="1" width="3.5" height="11" rx="1"/><rect x="6.5" y="1" width="3.5" height="11" rx="1"/></svg>
+    </button>
+    <span class="music-label">Here Comes The Sun · The Beatles</span>
+    <span class="music-note">&#9835;</span>
+  </div>
+
+  <!-- Header -->
+  <div class="card-header">
+    <svg class="corner-ornament corner-tl" viewBox="0 0 28 28" fill="none">
+      <path d="M2 2L2 14M2 2L14 2" stroke="#e8c96a" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="2" cy="2" r="1.5" fill="#e8c96a"/>
+    </svg>
+    <svg class="corner-ornament corner-tr" viewBox="0 0 28 28" fill="none">
+      <path d="M2 2L2 14M2 2L14 2" stroke="#e8c96a" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="2" cy="2" r="1.5" fill="#e8c96a"/>
+    </svg>
+    <svg class="cross-svg" width="32" height="40" viewBox="0 0 32 40" fill="none">
+      <rect x="13" y="0" width="6" height="40" rx="3" fill="#e8c96a" opacity=".9"/>
+      <rect x="0" y="10" width="32" height="6" rx="3" fill="#e8c96a" opacity=".9"/>
+      <circle cx="16" cy="13" r="3" fill="#fdf8ef"/>
+    </svg>
+    <p class="header-title">Bautismo &amp; Primer Aniversario</p>
+    <h1 class="header-name">Gerardo Leonardo</h1>
+  </div>
+
+  <!-- Body -->
+  <div class="card-body">
+    <div class="ornament"><div class="diamond"></div></div>
+    <p class="tagline">«Un año de amor, una vida de fe.»</p>
+    <p class="intro-text">
+      Con inmensa alegría, te invitamos a celebrar el<br>
+      <em>Bautismo y el Primer Aniversario</em> de nuestro pequeño:
+    </p>
+    <div class="baby-name-block">
+      <span class="baby-name-label">nuestro hijo</span>
+      <div class="baby-name-text">Gerardo Leonardo</div>
+    </div>
+    <p class="faith-text">Acompáñanos a dar gracias por su vida<br>y a compartir el inicio de su camino espiritual.</p>
+
+    <div class="ornament"><div class="diamond"></div></div>
+
+    <div class="event-block">
+      <div class="event-name">Ceremonia religiosa</div>
+      <div class="event-detail">
+        <strong>Sábado 6 de junio de 2026 · 13:00 hrs</strong><br>
+        Parroquia de San Pedro Apóstol<br>
+        <span style="font-size:12px;color:#666">Cda. de Juárez 2, San Pedro Tultepec, Méx.</span>
+      </div>
+      <a class="map-link" href="https://maps.app.goo.gl/NQZQvwcKsLZpkyGQA" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 10 12" fill="none"><circle cx="5" cy="4.5" r="2.2" stroke="#1a3a5c" stroke-width="1"/><path d="M5 11C5 11 1 7 1 4.5C1 2.3 2.8 1 5 1C7.2 1 9 2.3 9 4.5C9 7 5 11 5 11Z" stroke="#1a3a5c" stroke-width="1" fill="none"/></svg>
+        Ver en mapa
+      </a>
+    </div>
+
+    <div class="event-block">
+      <div class="event-name">Recepción &amp; convivio</div>
+      <div class="event-detail">
+        Al terminar la misa, festejo familiar<br>
+        <span style="font-size:12px;color:#666">Francisco Javier Mina 21, San Pedro Tultepec, Méx.</span>
+      </div>
+      <a class="map-link" href="https://maps.app.goo.gl/2z8nQUtfxP2vFwqY9" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 10 12" fill="none"><circle cx="5" cy="4.5" r="2.2" stroke="#1a3a5c" stroke-width="1"/><path d="M5 11C5 11 1 7 1 4.5C1 2.3 2.8 1 5 1C7.2 1 9 2.3 9 4.5C9 7 5 11 5 11Z" stroke="#1a3a5c" stroke-width="1" fill="none"/></svg>
+        Ver en mapa
+      </a>
+    </div>
+
+    <div class="ornament"><div class="diamond"></div></div>
+
+    <div class="parents-block">
+      <span class="section-label">Papás</span>
+      <div class="parents-names">Gerardo Rodríguez Dávila<br>&amp; Tania Jaime Vargas</div>
+    </div>
+    <div style="margin:.5rem 0">
+      <span class="section-label">Madrina</span>
+      <div class="padrinos-name">Fátima Margarita Rodríguez Dávila</div>
+    </div>
+
+    <div class="ornament"><div class="diamond"></div></div>
+    <p class="closing-text">Tu presencia es nuestro mejor regalo.</p>
+  </div>
+
+  <!-- Lion + gift section -->
+  <div class="lion-section">
+    <div class="lion-stars">
+      <div class="lion-star"></div><div class="lion-star"></div>
+      <div class="lion-star"></div><div class="lion-star"></div>
+      <div class="lion-star"></div>
+    </div>
+
+    <div class="lion-cub-wrap">
+      <!-- Cub A – standing, with crown -->
+      <svg class="cub-a" width="86" height="96" viewBox="0 0 86 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Crown -->
+        <path d="M28 22 L32 13 L37 19 L43 10 L49 19 L54 13 L58 22Z" fill="#e8c96a" stroke="#c9a84c" stroke-width=".8"/>
+        <circle cx="43" cy="12" r="2.5" fill="#c9a84c"/>
+        <circle cx="32" cy="15" r="1.5" fill="#c9a84c"/>
+        <circle cx="54" cy="15" r="1.5" fill="#c9a84c"/>
+        <!-- Mane outer -->
+        <ellipse cx="43" cy="46" rx="28" ry="26" fill="#c9a84c" opacity=".85"/>
+        <!-- Mane inner glow -->
+        <ellipse cx="43" cy="46" rx="22" ry="21" fill="#e8c96a" opacity=".55"/>
+        <!-- Ears -->
+        <ellipse cx="22" cy="28" rx="8" ry="7" fill="#c9a84c"/>
+        <ellipse cx="64" cy="28" rx="8" ry="7" fill="#c9a84c"/>
+        <ellipse cx="22" cy="28" rx="4.5" ry="4" fill="#f5d78e" opacity=".6"/>
+        <ellipse cx="64" cy="28" rx="4.5" ry="4" fill="#f5d78e" opacity=".6"/>
+        <!-- Face -->
+        <ellipse cx="43" cy="47" rx="19" ry="18" fill="#f5d78e"/>
+        <!-- Eyes -->
+        <ellipse cx="36" cy="42" rx="3.8" ry="3.2" fill="#2a1a0a"/>
+        <ellipse cx="50" cy="42" rx="3.8" ry="3.2" fill="#2a1a0a"/>
+        <circle cx="37.5" cy="40.8" r="1.1" fill="white"/>
+        <circle cx="51.5" cy="40.8" r="1.1" fill="white"/>
+        <!-- Nose -->
+        <ellipse cx="43" cy="49" rx="4.5" ry="3" fill="#c97a4a"/>
+        <!-- Mouth -->
+        <path d="M38 52 Q43 57 48 52" stroke="#2a1a0a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <!-- Whiskers -->
+        <line x1="22" y1="49" x2="38" y2="50" stroke="#2a1a0a" stroke-width=".7" opacity=".4"/>
+        <line x1="22" y1="52" x2="38" y2="52" stroke="#2a1a0a" stroke-width=".7" opacity=".4"/>
+        <line x1="48" y1="50" x2="64" y2="49" stroke="#2a1a0a" stroke-width=".7" opacity=".4"/>
+        <line x1="48" y1="52" x2="64" y2="52" stroke="#2a1a0a" stroke-width=".7" opacity=".4"/>
+        <!-- Body -->
+        <ellipse cx="43" cy="75" rx="15" ry="14" fill="#f5d78e"/>
+        <!-- Paws -->
+        <ellipse cx="30" cy="88" rx="7" ry="5" fill="#f5d78e"/>
+        <ellipse cx="56" cy="88" rx="7" ry="5" fill="#f5d78e"/>
+        <line x1="27" y1="89" x2="27" y2="92" stroke="#c9a84c" stroke-width=".9"/>
+        <line x1="30" y1="90" x2="30" y2="93" stroke="#c9a84c" stroke-width=".9"/>
+        <line x1="33" y1="89" x2="33" y2="92" stroke="#c9a84c" stroke-width=".9"/>
+        <line x1="53" y1="89" x2="53" y2="92" stroke="#c9a84c" stroke-width=".9"/>
+        <line x1="56" y1="90" x2="56" y2="93" stroke="#c9a84c" stroke-width=".9"/>
+        <line x1="59" y1="89" x2="59" y2="92" stroke="#c9a84c" stroke-width=".9"/>
+        <!-- Tail -->
+        <path d="M58 78 Q74 70 70 58 Q66 50 73 46" stroke="#c9a84c" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        <ellipse cx="74.5" cy="43.5" rx="4.5" ry="5.5" fill="#e8c96a" transform="rotate(20 74.5 43.5)"/>
+      </svg>
+
+      <!-- Cub B – sitting, happy face -->
+      <svg class="cub-b" width="66" height="78" viewBox="0 0 66 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Small star on head -->
+        <path d="M29 19 L31 13 L33 10 L35 13 L37 19 L33 16.5Z" fill="#e8c96a" stroke="#c9a84c" stroke-width=".6"/>
+        <!-- Mane -->
+        <ellipse cx="33" cy="35" rx="22" ry="20" fill="#c9a84c" opacity=".85"/>
+        <ellipse cx="33" cy="35" rx="17" ry="16" fill="#e8c96a" opacity=".55"/>
+        <!-- Ears -->
+        <ellipse cx="16" cy="20" rx="7" ry="6" fill="#c9a84c"/>
+        <ellipse cx="50" cy="20" rx="7" ry="6" fill="#c9a84c"/>
+        <ellipse cx="16" cy="20" rx="4" ry="3.5" fill="#f5d78e" opacity=".6"/>
+        <ellipse cx="50" cy="20" rx="4" ry="3.5" fill="#f5d78e" opacity=".6"/>
+        <!-- Face -->
+        <ellipse cx="33" cy="36" rx="15" ry="14" fill="#f5d78e"/>
+        <!-- Happy closed eyes -->
+        <path d="M26 31 Q29.5 27.5 33 31" stroke="#2a1a0a" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M33 31 Q36.5 27.5 40 31" stroke="#2a1a0a" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <!-- Nose -->
+        <ellipse cx="33" cy="37.5" rx="3.2" ry="2.2" fill="#c97a4a"/>
+        <!-- Big smile -->
+        <path d="M27 41 Q33 48 39 41" stroke="#2a1a0a" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <!-- Blush -->
+        <ellipse cx="22" cy="39" rx="4.5" ry="2.8" fill="#e89898" opacity=".35"/>
+        <ellipse cx="44" cy="39" rx="4.5" ry="2.8" fill="#e89898" opacity=".35"/>
+        <!-- Body sitting -->
+        <ellipse cx="33" cy="61" rx="12" ry="11" fill="#f5d78e"/>
+        <!-- Front paws sitting -->
+        <ellipse cx="23" cy="71" rx="6" ry="4" fill="#f5d78e"/>
+        <ellipse cx="43" cy="71" rx="6" ry="4" fill="#f5d78e"/>
+        <!-- Curly tail -->
+        <path d="M45 63 Q57 56 53 46 Q50 40 55 37" stroke="#c9a84c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="56.5" cy="34.5" rx="3.5" ry="4.5" fill="#e8c96a" transform="rotate(15 56.5 34.5)"/>
+      </svg>
+    </div>
+
+    <!-- Speech bubble -->
+    <div class="lion-speech">
+      <span class="lion-speech-label">Un mensaje de Gerardo Leonardo</span>
+      <p class="lion-speech-text">
+        «¡Estás invitado a mi bautizo! Tu presencia será mi mejor regalo, pero si tienes pensado darme un detallito en forma de ropita, te paso un dato importante: soy un bebé grandecito. Acabo de cumplir mi primer añito, ¡pero mi clóset ya es talla 2 años! ¡No faltes, te espero con mucha alegría!»
+      </p>
+      <div style="text-align:center">
+        <span class="size-badge">Talla 2 años</span>
+      </div>
+    </div>
+
+    <!-- Paw prints -->
+    <div class="paw-row">
+      <svg class="paw" width="20" height="20" viewBox="0 0 24 24" fill="#e8c96a">
+        <ellipse cx="12" cy="15.5" rx="5.5" ry="4.5"/><ellipse cx="5.5" cy="10.5" rx="2.8" ry="2.2"/>
+        <ellipse cx="18.5" cy="10.5" rx="2.8" ry="2.2"/><ellipse cx="9" cy="7" rx="2.2" ry="1.7"/>
+        <ellipse cx="15" cy="7" rx="2.2" ry="1.7"/>
+      </svg>
+      <svg class="paw" width="14" height="14" viewBox="0 0 24 24" fill="#e8c96a" style="margin-bottom:3px">
+        <ellipse cx="12" cy="15.5" rx="5.5" ry="4.5"/><ellipse cx="5.5" cy="10.5" rx="2.8" ry="2.2"/>
+        <ellipse cx="18.5" cy="10.5" rx="2.8" ry="2.2"/><ellipse cx="9" cy="7" rx="2.2" ry="1.7"/>
+        <ellipse cx="15" cy="7" rx="2.2" ry="1.7"/>
+      </svg>
+      <svg class="paw" width="20" height="20" viewBox="0 0 24 24" fill="#e8c96a">
+        <ellipse cx="12" cy="15.5" rx="5.5" ry="4.5"/><ellipse cx="5.5" cy="10.5" rx="2.8" ry="2.2"/>
+        <ellipse cx="18.5" cy="10.5" rx="2.8" ry="2.2"/><ellipse cx="9" cy="7" rx="2.2" ry="1.7"/>
+        <ellipse cx="15" cy="7" rx="2.2" ry="1.7"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="card-footer">
+    <span class="footer-text">Gerardo Leonardo Rodríguez Jaime &middot; 6 &middot; VI &middot; 2026</span>
+  </div>
+
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var player, isPlaying = false;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    height: '1', width: '1',
+    videoId: 'dL_iaWoQF3E',
+    playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: 'dL_iaWoQF3E', modestbranding: 1 },
+    events: {
+      onStateChange: function(e) {
+        isPlaying = e.data === YT.PlayerState.PLAYING;
+        document.getElementById('ico-play').style.display = isPlaying ? 'none' : 'block';
+        document.getElementById('ico-pause').style.display = isPlaying ? 'block' : 'none';
+      }
+    }
+  });
+}
+
+function toggleMusic() {
+  if (!player || typeof player.playVideo !== 'function') return;
+  isPlaying ? player.pauseVideo() : player.playVideo();
+}
+</script>
+</body>
+</html>
