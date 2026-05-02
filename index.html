@@ -10,7 +10,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  background:#f0ebe0;
+  background:#edeade;
   min-height:100vh;
   display:flex;
   align-items:center;
@@ -29,7 +29,7 @@ body{
   border-radius:6px;
   overflow:hidden;
   animation:fadeUp .9s ease both;
-  box-shadow:0 8px 32px rgba(26,58,92,.13);
+  box-shadow:0 8px 32px rgba(42,58,18,.18);
 }
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -40,7 +40,7 @@ body{
 
 /* ── MUSIC BAR ── */
 .music-bar{
-  background:#0f2340;
+  background:#1e2a0e;
   padding:.8rem 1.4rem;
   display:flex;align-items:center;gap:12px;
 }
@@ -58,14 +58,14 @@ body{
 .music-label{
   font-family:'Cinzel',serif;
   font-size:clamp(13px,3.5vw,16px);letter-spacing:1.5px;
-  color:#c8dce8;flex:1;
+  color:#b8cfa0;flex:1;
   font-weight:400;
 }
 .music-note{font-size:22px;color:#e8c96a;animation:float 1.5s ease-in-out infinite}
 
 /* ── HEADER ── */
 .card-header{
-  background:#1a3a5c;
+  background:#3a5020;
   padding:2rem 1.5rem 1.75rem;
   text-align:center;
   position:relative;
@@ -102,7 +102,7 @@ body{
 }
 .header-date-sub{
   font-family:'Cinzel',serif;
-  color:#a8c8e0;
+  color:#c8dba8;
   font-size:clamp(14px,3.8vw,17px);
   letter-spacing:2px;
   margin-top:.6rem;
@@ -121,7 +121,7 @@ body{
 .tagline{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
-  color:#1a3a5c;
+  color:#3a5020;
   font-size:clamp(22px,6vw,28px);
   font-weight:700;
   margin:0 0 .7rem;
@@ -141,8 +141,8 @@ body{
   padding:1.1rem 1.1rem;
   border:2px solid #c9a84c;
   border-radius:6px;
-  background:#fff9ec;
-  box-shadow:0 2px 10px rgba(201,168,76,.15);
+  background:linear-gradient(135deg,#eef2f8 0%,#fdf8ef 60%,#faf4e0 100%);
+  box-shadow:0 2px 12px rgba(201,168,76,.2), inset 0 1px 0 rgba(201,168,76,.3);
 }
 .baby-name-label{
   font-family:'Cinzel',serif;
@@ -153,14 +153,15 @@ body{
 .baby-name-text{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(32px,9vw,42px);font-weight:700;
-  color:#1a3a5c;
+  color:#3a5068;
   letter-spacing:.5px;line-height:1.2;
   animation:shimmer 3s ease-in-out infinite;
+  text-shadow:0 2px 8px rgba(201,168,76,.35);
 }
 .faith-text{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
-  color:#3a2a0a;
+  color:#2e3a18;
   font-size:clamp(19px,5.2vw,23px);
   font-weight:400;
   margin:.7rem 0 1.1rem;
@@ -176,13 +177,13 @@ body{
 }
 .event-block{
   margin:1rem 0;padding:1rem 1.1rem;
-  background:#f0ebe0;
-  border-left:4px solid #1a3a5c;
+  background:#eef2e4;
+  border-left:4px solid #3a5020;
   text-align:left;border-radius:0 6px 6px 0;
 }
 .event-name{
   font-family:'Cinzel',serif;
-  font-size:clamp(14px,3.8vw,17px);color:#1a3a5c;
+  font-size:clamp(14px,3.8vw,17px);color:#3a5068;
   letter-spacing:1px;font-weight:700;margin-bottom:6px;
 }
 .event-detail{
@@ -190,12 +191,12 @@ body{
   font-size:clamp(19px,5.2vw,23px);color:#1a1a0f;
   line-height:1.7;font-weight:400;
 }
-.event-detail strong{color:#1a3a5c;font-weight:700}
+.event-detail strong{color:#3a5020;font-weight:700}
 .map-btn{
   display:inline-flex;align-items:center;gap:6px;
   margin-top:10px;
   padding:10px 18px;
-  background:#1a3a5c;
+  background:#3a5068;
   color:#e8c96a;
   font-family:'Cinzel',serif;
   font-size:clamp(12px,3.2vw,14px);letter-spacing:1.5px;
@@ -204,31 +205,33 @@ body{
   font-weight:700;
   transition:background .2s;
 }
-.map-btn:hover{background:#2a5080}
+.map-btn:hover{background:#2a3d52}
 
 /* ── PEOPLE ── */
 .parents-block{margin:1.2rem 0 .8rem}
 .parents-names{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(21px,5.8vw,26px);color:#1a3a5c;
+  font-size:clamp(21px,5.8vw,26px);color:#3a5068;
   line-height:1.65;font-weight:700;
+  text-shadow:0 1px 6px rgba(201,168,76,.3);
 }
 .padrinos-name{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(21px,5.8vw,26px);color:#1a3a5c;
+  font-size:clamp(21px,5.8vw,26px);color:#3a5068;
   font-style:normal;font-weight:700;line-height:1.65;
+  text-shadow:0 1px 6px rgba(201,168,76,.3);
 }
 .closing-text{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-size:clamp(21px,5.8vw,27px);font-weight:700;
-  color:#1a3a5c;
+  color:#3a5020;
   margin:1.1rem 0 .6rem;line-height:1.6;
 }
 
 /* ── RSVP SECTION ── */
 .rsvp-section{
-  background:#f0ebe0;
+  background:#eef2e4;
   border-top:2px solid #c9a84c;
   padding:1.75rem 2rem;
   text-align:center;
@@ -236,7 +239,7 @@ body{
 .rsvp-title{
   font-family:'Cinzel',serif;
   font-size:clamp(15px,4vw,18px);letter-spacing:2px;
-  color:#1a3a5c;font-weight:700;
+  color:#3a5020;font-weight:700;
   display:block;margin-bottom:.6rem;
   text-transform:uppercase;
 }
@@ -248,7 +251,7 @@ body{
 .rsvp-btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:16px 32px;
-  background:#1a3a5c;
+  background:#3a5020;
   color:#e8c96a;
   font-family:'Cinzel',serif;
   font-size:clamp(15px,4vw,18px);letter-spacing:2px;font-weight:700;
@@ -256,11 +259,11 @@ body{
   text-decoration:none;
   cursor:pointer;
   animation:pulse 2.5s ease-in-out infinite;
-  box-shadow:0 4px 16px rgba(26,58,92,.3);
+  box-shadow:0 4px 16px rgba(58,80,32,.3);
   transition:background .2s,box-shadow .2s;
   width:100%;
 }
-.rsvp-btn:hover{background:#2a5080;box-shadow:0 6px 20px rgba(26,58,92,.4)}
+.rsvp-btn:hover{background:#4e6a2a;box-shadow:0 6px 20px rgba(58,80,32,.4)}
 .rsvp-note{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(15px,4vw,18px);color:#555;
@@ -269,7 +272,7 @@ body{
 
 /* ── LION SECTION ── */
 .lion-section{
-  background:#1a3a5c;
+  background:#3a5020;
   padding:1.75rem 1.5rem 1.5rem;
   text-align:center;position:relative;
 }
@@ -312,7 +315,7 @@ body{
 }
 .size-badge{
   display:inline-block;
-  background:#c9a84c;color:#1a3a5c;
+  background:#c9a84c;color:#2e3a18;
   font-family:'Cinzel',serif;
   font-size:clamp(14px,3.8vw,17px);letter-spacing:2px;font-weight:700;
   padding:9px 22px;border-radius:4px;margin-top:1.1rem;
@@ -324,7 +327,7 @@ body{
 .paw:nth-child(3){animation-delay:.7s}
 
 /* ── FOOTER ── */
-.card-footer{background:#0f2340;padding:1rem 1.5rem;text-align:center}
+.card-footer{background:#1e2a0e;padding:1rem 1.5rem;text-align:center}
 .footer-text{
   font-family:'Cinzel',serif;
   font-size:clamp(13px,3.5vw,15px);letter-spacing:2px;
@@ -492,7 +495,7 @@ body{
   <div class="rsvp-section">
     <span class="rsvp-title">Confirmación de asistencia</span>
     <p class="rsvp-sub">
-      Por favor confirma tu asistencia<br>antes del <strong>30 de mayo de 2026</strong>
+      Por favor confirma tu asistencia<br>lo antes posible.
     </p>
     <a class="rsvp-btn" href="https://forms.gle/6CTyPBYrMp3vLP2J6" target="_blank">
       ✅ &nbsp;Confirmar asistencia
